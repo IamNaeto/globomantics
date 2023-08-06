@@ -44,7 +44,7 @@ const Inquiry = () => {
                 <label htmlFor="remarks">Remarks</label>
                 <input
                     type="text"
-                    id="email"
+                    id="remarks"
                     className="form-control"
                     placeholder="Remarks"
                     value={contactInfo.remarks}
