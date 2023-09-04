@@ -5,10 +5,12 @@ import Inquiry from "./Inquiry";
 
 const House = ({ house }) => {
     const [InquiryShown, setInquiryShown] = useState(false);
+
     const InquiryClick = () => {
         setInquiryShown(!InquiryShown);
     };
-    return ( 
+
+    return (
         <div>
             <div className="row mt-2">
                 <h5 className="col-md-12">{house.country}</h5>
@@ -18,22 +20,27 @@ const House = ({ house }) => {
             </div>
             <div className="row">
                 <div className="col-md-7">
-                    <img src={`/images/${house.photo}.jpeg`} alt="House"/>
+                    {/* Add responsive image class */}
+                    <img
+                        src={`/images/${house.photo}.jpeg`}
+                        alt="House"
+                        className="img-fluid" // This class ensures the image scales with the container
+                    />
                 </div>
                 <div className="col-md-5">
                     <p className="price">${house.price}</p>
                     <p>${house.description}</p>
-                    <img 
+                    <img
                         src={emailIcon}
                         height="50"
                         alt="inquiry"
                         onClick={InquiryClick}
                     />
-                    {InquiryShown && <Inquiry house ={house} />}
+                    {InquiryShown && <Inquiry house={house} />}
                 </div>
             </div>
         </div>
-     );
-}
- 
+    );
+};
+
 export default House;

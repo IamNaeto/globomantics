@@ -14,7 +14,7 @@ function App() {
 
   return (
     <Router>
-      <div className="container">
+      <div className="container py-4">
         <Header subtitle="Providing houses all over the world"/>
         <HouseFilter allHouses={allHouses} />
         <Switch>
